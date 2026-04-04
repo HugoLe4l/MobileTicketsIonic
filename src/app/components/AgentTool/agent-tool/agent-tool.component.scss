@@ -1,0 +1,29 @@
+.select-guiche{
+    display: flex;
+
+    flex-direction: column;
+    width: 100%;
+}
+.select-guiche ion-item{
+    --background: transparent;
+    --color: black;
+}
+.select-guiche p{
+    opacity: 0;
+}
+.select-guiche .OK{
+    opacity: 1;
+    color:  #4caf50;
+    animation: toOpacity0 3s forwards;
+}
+.select-guiche .FAIL{
+    opacity: 1;
+    color: rgb(255, 17, 17);
+    animation: toOpacity0 3s forwards;
+}
+
+@keyframes toOpacity0 {
+    from{ opacity: 1;}
+    to{ opacity: 0;}
+}
+

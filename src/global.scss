@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
@@ -35,3 +37,143 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+    --ion-font-family: "Roboto Mono", monospace;
+
+    --color-primary: #55BBFA;
+    --ion-color-primary: #55BBFA;
+    --ion-color-primary-contrast: white;
+    --color-SG: #7CB342;
+    --color-SE: #FB8C00;
+    --color-SP: #E53935;
+
+    --border-row-01: 1px solid rgba(0, 0, 0, 0.151);
+}
+ion-content {
+    --background: white;
+}
+ion-toolbar{
+    --background: var(--color-primary) !important;
+}
+.container {
+    width: 100%;
+    color: black;
+    padding: 2% 12%;
+}
+
+ion-grid ion-col{
+    font-size: clamp(0.6rem, 1vw, 1rem);
+}
+
+.table-contador {
+    padding: 0;
+    display: flex;
+    width: fit-content;
+
+}
+
+.table-contador ion-col {
+    border: var(--border-row-01);
+    border-top-right-radius: 1rem;
+    background: white;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    text-wrap: nowrap;
+}
+
+.table-contador ion-col span:nth-of-type(2) {
+    background: var(--color-primary);
+    width: clamp(28px, 2vw, 10px);
+    aspect-ratio: 2/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    color: white;
+}
+
+.table-contador .cont-style {
+    background: #EFEFEF;
+    padding-left: 3%;
+}
+
+.table-contador .cont-style:nth-of-type(2) {
+    transform: translateX(-15px);
+    z-index: 3;
+}
+
+.table-contador .cont-style:nth-of-type(3) {
+    transform: translateX(-30px);
+    z-index: 2;
+}
+
+.table-contador .cont-style:nth-of-type(4) {
+    transform: translateX(-45px);
+    z-index: 1;
+}
+
+
+.table-title-row {
+    background: #55BBFA;
+    font-weight: 400;
+}
+.ion-row-values {
+    padding: .5%;
+    border-bottom: var(--border-row-01);
+    border-left:  var(--border-row-01);
+    border-right:  var(--border-row-01);
+}
+
+ion-col {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+ion-col .tipo-senha {
+    width: clamp(28px, 2vw, 50px);
+    aspect-ratio: 2/1;
+    border-radius: .5rem;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SG {
+    background: var(--color-SG) !important;
+}
+
+.SE {
+    background: var(--color-SE) !important;
+}
+
+.SP {
+    background: var(--color-SP) !important;
+}
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .container {
+        padding: 0;
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .table-contador .cont-style {
+        background: #EFEFEF;
+        padding-left: 4%;
+    }
+    
+}

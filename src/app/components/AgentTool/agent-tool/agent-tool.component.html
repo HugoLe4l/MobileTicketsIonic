@@ -1,0 +1,18 @@
+ <div class="select-guiche">
+      <ion-item>
+        <ion-select #guiche value="0" label="Guiche" label-placement="floating">
+          <ion-select-option value="0">01</ion-select-option>
+          <ion-select-option value="1">02</ion-select-option>
+          <ion-select-option value="2">03</ion-select-option>
+          <ion-select-option value="3">04</ion-select-option>
+          <ion-select-option value="4">05</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="buttons">
+        <ion-button id="btn-chamar-proximo" (click)="ChamarProximoDaFila(guiche.value)">CHAMAR PROXIMO</ion-button>
+        <ion-button id="btn-concluir-atendimento" (click)="ConcluirAtendimento(guiche.value)">CONCLUIR ATENDIMENTO</ion-button>
+      </div>
+
+      <p [ngClass]="agentResponse.fadeClass">{{ agentResponse.status.mensagem }}</p>
+    </div>

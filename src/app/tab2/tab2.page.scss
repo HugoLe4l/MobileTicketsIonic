@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content-tab2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .section-left {
+    flex: 1;
+
+}
+
+.container .section-right {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-historico {
+    background: white;
+    color: black;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 407px;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.card-historico ion-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-historico ion-card-header{
+    background: var(--color-primary);
+}
+.card-historico ion-card-title {
+    color: white;
+    text-align: center;
+    width: 1;
+}
+
+.card-historico ion-card-content div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0% 20%;
+}
+.card-historico ion-card-content div:first-of-type{
+scale: 1.4;
+}
+.card-historico ion-card-content div span {
+    width: 100%;
+    text-align: center;
+}
+
+.card-historico ion-card-content div span:nth-of-type(1) {
+/*     background: var(--color-SP);
+ */    color: white;
+}
+
+
+.card-historico ion-card-content div span:nth-of-type(2) {
+    border: var(--border-row-01);
+}
+
+
+
+ion-item{
+    --background: white;
+}
+ion-item{
+    --color: black;
+}
+ion-input{
+    --background: white;
+    --color: black;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        align-items: center;
+        justify-content: center;
+    }
+    .content-tab2{
+        flex-direction: column;
+    }
+}

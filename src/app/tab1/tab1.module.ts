@@ -6,14 +6,16 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-
+import { AgentToolComponent  } from '../components/AgentTool/agent-tool/agent-tool.component';
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    AgentToolComponent
+    
   ],
   declarations: [Tab1Page]
 })

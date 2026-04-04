@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      FILA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,119 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Fila</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
+
+
+  <section class="container">
+   
+    <app-agent-tool></app-agent-tool>
+    <div class="content-tab2">
+      <div class="section-left">
+        <ion-grid class="table-em-fila">
+
+          <ion-row class="table-contador">
+            <ion-col> <span>Em fila</span> <span>{{ filaService.listaFila.length }}</span> </ion-col>
+            <ion-col class="cont-style"> <span>SG</span> <span class="SG">{{ totalSG }}</span> </ion-col>
+            <ion-col class="cont-style"> <span>SE</span> <span class="SE">{{ totalSE }}</span> </ion-col>
+            <ion-col class="cont-style"> <span>SP</span> <span class="SP">{{ totalSP }}</span> </ion-col>
+          </ion-row>
+
+          <ion-row class="table-title-row">
+            <ion-col size="2">Senha</ion-col>
+            <ion-col size="1">Tipo</ion-col>
+            <ion-col>Nome do Paciente</ion-col>
+            <ion-col>Entrada</ion-col>
+          </ion-row>
+
+          <ion-row class="ion-row-values" *ngFor="let item of listaFilaCompleta">
+
+            <ng-container *ngIf="item; else linhaVazia">
+              <ion-col size="2">{{ item.senha }}</ion-col>
+              <ion-col size="1"><span class="tipo-senha" [ngClass]="item.tipoSenha">{{ item.tipoSenha}}</span></ion-col>
+              <ion-col>{{ item.nome }}</ion-col>
+              <ion-col>{{ item.entrada }}</ion-col>
+            </ng-container>
+
+            <ng-template #linhaVazia>
+              <ion-col>&nbsp;</ion-col>
+              <ion-col>&nbsp;</ion-col>
+              <ion-col>&nbsp;</ion-col>
+              <ion-col>&nbsp;</ion-col>
+            </ng-template>
+
+          </ion-row>
+
+        </ion-grid>
+
+      </div>
+
+      <div class="section-right">
+
+        <ion-card class="card-historico">
+          <ion-card-header>
+            <ion-card-title>Ultimas 5 senhas chamadas</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ng-container *ngIf="historicoChamadasService.listaHistoricoChamadas.length > 0; else vazio">
+              <div *ngFor="let item of historicoChamadasService.listaHistoricoChamadas">
+                <span [class]="item.tipoSenha">{{ item.senha }}</span>
+                <span>GUICHÊ {{ item.guiche + 1 }}</span>
+              </div>
+            </ng-container>
+
+            <ng-template #vazio>
+              <div>Nenhuma chamada no histórico.</div>
+            </ng-template>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-button size="large" id="open-modal" expand="block">Pegar senha</ion-button>
+
+        <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-buttons slot="start">
+                  <ion-button (click)="cancel()">Cancel</ion-button>
+                </ion-buttons>
+                <ion-buttons slot="end">
+                  <ion-button (click)="confirm()" [strong]="true" [disabled]="!nome || !tipoSenha">Confirm</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">
+
+              <ion-item>
+                <ion-input label="Digite seu nome: " labelPlacement="stacked" type="text" placeholder="Seu nome"
+                  [(ngModel)]="nome">
+                </ion-input>
+              </ion-item>
+
+
+              <ion-item class="ion-tem-select-senha">
+                <ion-select label="Tipo de senha" placeholder="Escolha" [(ngModel)]="tipoSenha">
+                  <ion-select-option class="ops" value="SG">(SG) Senha Geral</ion-select-option>
+                  <ion-select-option value="SE">(SE) Senha para retirada de Exames</ion-select-option>
+                  <ion-select-option value="SP">(SP) Senha Prioritária</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+
+
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+
+      </div>
+    </div>
+
+  
+  </section>
 </ion-content>
