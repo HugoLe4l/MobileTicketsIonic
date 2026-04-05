@@ -16,7 +16,7 @@ A aplicação simula um sistema de filas onde:
 
 🚀 Acesse o projeto online
 
-👉 https://mobile-tickets-ionic-i4t8.vercel.app/tabs/tab1
+👉 <a href="https://mobile-tickets-ionic-i4t8.vercel.app/tabs/tab1">Link</a>
 
 ## 🧩 Funcionalidades
 

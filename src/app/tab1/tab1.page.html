@@ -22,10 +22,10 @@
     <ion-grid class="table-em-atendimento">
 
       <ion-row class="table-contador">
-        <ion-col> <span>Em atendimento</span> <span>0</span> </ion-col>
-        <ion-col class="cont-style"> <span>SG</span> <span class="SG">0</span> </ion-col>
-        <ion-col class="cont-style"> <span>SE</span> <span class="SE">0</span> </ion-col>
-        <ion-col class="cont-style"> <span>SP</span> <span class="SP">0</span> </ion-col>
+        <ion-col> <span>Em atendimento</span> <span>{{ QuatidadeEmAtendimento }}</span> </ion-col>
+        <ion-col class="cont-style"> <span>SG</span> <span class="SG">{{ QtdSG_EmAtendimento }}</span> </ion-col>
+        <ion-col class="cont-style"> <span>SE</span> <span class="SE">{{ QtdSE_EmAtendimento }}</span> </ion-col>
+        <ion-col class="cont-style"> <span>SP</span> <span class="SP">{{ QtdSP_EmAtendimento }}</span> </ion-col>
       </ion-row>
 
       <ion-row class="table-title-row">

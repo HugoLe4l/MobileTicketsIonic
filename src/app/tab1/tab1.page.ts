@@ -11,6 +11,22 @@ export class Tab1Page {
 
   constructor(public atendimentoService: AtendimentoService) { }
 
+  get QuatidadeEmAtendimento(): number{
+    return this.atendimentoService.listaEmAtendimento.filter(item => item != null).length
+  }
+  get QtdSG_EmAtendimento(): number{
+    return this.atendimentoService.listaEmAtendimento.filter(item => item && item.tipoSenha === "SG").length
+  }
+  get QtdSE_EmAtendimento(): number{
+    return this.atendimentoService.listaEmAtendimento.filter(item => item && item.tipoSenha === "SE").length
+  }
+  get QtdSP_EmAtendimento(): number{
+    return this.atendimentoService.listaEmAtendimento.filter(item => item && item.tipoSenha === "SP").length
+  }
+
+
+
+
   get listaEmAtendimentoCompleta() {
     const total = 5
     const lista = [...this.atendimentoService.listaEmAtendimento]
@@ -20,6 +36,7 @@ export class Tab1Page {
     }
     return lista
   }
+
   ChamarProximoDaFila(guiche: number) {
     this.atendimentoService.PegaPrimeiroDaFila(guiche)
   }

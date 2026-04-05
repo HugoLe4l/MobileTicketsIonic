@@ -10,7 +10,6 @@ export class FilaService {
   }
   
   listaFila: any[] = [];
-  listaFila$ = new BehaviorSubject<any[]>([]);
   
   CarregarDadosDaFila() {
     const LocalStorageFila = localStorage.getItem('fila')
