@@ -59,7 +59,7 @@ export class Tab2Page {
   onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
     if (event.detail.role === 'confirm') {
       this.filaService.AddToFila(event.detail.data['tipoSenha'], event.detail.data['nome'])
-      const audio = new Audio("../../assets/audio/paper.mp3")
+      const audio = new Audio("assets/audio/paper.mp3")
       audio.play()
     }
   }

@@ -33,7 +33,7 @@ export class AtendimentoService {
         return;
       }
 
-      const audio = new Audio("../../assets/audio/ding-dong.mp3")
+      const audio = new Audio("assets/audio/ding-dong.mp3")
       audio.play()
       this.filaService.salvarFilaLocalStorage()
       this.listaEmAtendimento[guiche] = PegaOPrimeiro;
@@ -52,7 +52,7 @@ export class AtendimentoService {
 
   ConcluirAtendimento(guiche: number) {
     if (this.listaEmAtendimento[guiche]) {
-      const audio = new Audio("../../assets/audio/finalizarAtendimento.mp3")
+      const audio = new Audio("assets/audio/finalizarAtendimento.mp3")
       audio.play()
 
       this.listaEmAtendimento[guiche] = null
